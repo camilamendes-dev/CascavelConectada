@@ -117,6 +117,8 @@ Levantamento com **17 requisitos funcionais** (RF01–RF17, módulos Cidadão e 
 
 Atores do sistema: Cidadão, Administrador, Equipe de Manutenção e Sistema Automático.
 
+📄 Lista completa e detalhada: [docs/REQUISITOS.md](docs/REQUISITOS.md)
+
 ---
 
 ## 📌 Status do Projeto
