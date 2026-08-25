@@ -19,7 +19,7 @@
 
 ---
 
-Muitos munícipes ainda precisam ir presencialmente até órgãos públicos — ou ligar para números que nunca atendem — só para reportar um buraco na rua, uma lâmpada queimada ou solicitar poda de árvore. O **CascavelConectada** resolve isso digitalizando o registro de solicitações com geolocalização e fotos, além de agrupar demandas próximas (raio de 500m) e sugerir rotas otimizadas para as equipes de campo, reduzindo deslocamentos e aumentando a eficiência do atendimento.
+Muitos moradores ainda precisam ir presencialmente até órgãos públicos — ou ligar para números que nunca atendem — só para reportar um buraco na rua, uma lâmpada queimada ou solicitar poda de árvore. O **CascavelConectada** resolve isso digitalizando o registro de solicitações com geolocalização e fotos, além de agrupar demandas próximas (raio de 500m) e sugerir rotas otimizadas para as equipes de campo, reduzindo deslocamentos e aumentando a eficiência do atendimento.
 
 ## 📑 Sumário
 
@@ -158,13 +158,13 @@ Atores do sistema: **Cidadão**, **Administrador**, **Equipe de Manutenção** e
 
 7 entidades principais — `Usuario`, `Solicitacao`, `Categoria`, `Imagem`, `GrupoAtendimento`, `OrdemServico` e `Notificacao` — cobrindo relacionamentos 1:N, 1:1 e N:1.
 
-![Diagrama de Classes UML](docs/images/diagrama-classes-uml.png)
+![Diagrama de Classes UML](docs/imagens/diagrama-classes-uml.png)
 
 ### Diagrama Entidade-Relacionamento (DER)
 
 Estrutura física do banco PostgreSQL, com UUID como chave primária em todas as tabelas e campos de geolocalização (`DECIMAL(10,7)`).
 
-![DER - Banco de Dados](docs/images/der-banco-dados.png)
+![DER - Banco de Dados](docs/imagens/der-banco-dados.png)
 
 ---
 
@@ -172,7 +172,7 @@ Estrutura física do banco PostgreSQL, com UUID como chave primária em todas as
 
 7 telas cobrindo os dois ambientes da plataforma: Login, mapa inicial, nova solicitação e histórico (app mobile); dashboard, gestão de solicitações e visualização de rotas (portal web).
 
-![Protótipos de Tela](docs/images/prototipos-telas.png)
+![Protótipos de Tela](docs/imagens/prototipos-telas.png)
 
 ---
 
