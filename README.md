@@ -127,7 +127,7 @@ Atores do sistema: Cidadão, Administrador, Equipe de Manutenção e Sistema Aut
 
 ## 👥 Autoria
 
-Projeto desenvolvido por Camila Mendes e Gabriel Santos Inácio, no âmbito da Extensão III do curso de Engenharia de Software (ADS) — UNIPAR Cascavel, 2026.
+Projeto desenvolvido por Camila Mendes e Gabriel Santos Inácio, no âmbito da Extensão III do curso de Engenharia de Software — UNIPAR Cascavel, 2026.
 
 ---
 
