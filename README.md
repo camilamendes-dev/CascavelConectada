@@ -1,8 +1,8 @@
 # 🏙️ CascavelConectada
 
-Plataforma digital para solicitação de serviços urbanos, conectando cidadãos e prefeitura de forma rápida, transparente e sem burocracia.
+Plataforma digital (app mobile + portal web) para solicitação e gestão inteligente de serviços urbanos municipais em Cascavel–PR.
 
-Muitos munícipes ainda precisam ir presencialmente até órgãos públicos — ou ligar para números que nunca atendem — só para reportar um buraco na rua, uma lâmpada queimada ou solicitar poda de árvore. O **CascavelConectada** resolve isso com um app para o cidadão e um portal web para a gestão municipal acompanharem cada chamado do início ao fim.
+Muitos munícipes ainda precisam ir presencialmente até órgãos públicos — ou ligar para números que nunca atendem — só para reportar um buraco na rua, uma lâmpada queimada ou solicitar poda de árvore. O **CascavelConectada** resolve isso digitalizando o registro de solicitações com geolocalização e fotos, além de agrupar demandas próximas (raio de 500m) e sugerir rotas otimizadas para as equipes de campo, reduzindo deslocamentos e aumentando a eficiência do atendimento.
 
 ---
 
@@ -75,27 +75,57 @@ GET /api/solicitacoes/2026-0842
 }
 ```
 
+### Agrupamento geográfico e rotas (portal web)
+
+O sistema agrupa automaticamente solicitações em um raio de 500m e sugere a rota otimizada para a equipe de campo:
+
+```bash
+GET /api/grupos-atendimento?status=aberto
+```
+
+```json
+{
+  "grupo": "Centro-01",
+  "solicitacoes": 5,
+  "equipe_sugerida": "Equipe 1",
+  "rota_otimizada": true
+}
+```
+
 ### Painel da gestão municipal
 
-Acesse `http://localhost:3000/painel` para visualizar todos os chamados por bairro, tipo de serviço e status, com filtros e mapa interativo.
+Acesse `http://localhost:3000/painel` para visualizar todos os chamados por bairro, categoria e status, com KPIs (abertas, em andamento, concluídas, tempo médio) e mapa interativo.
 
 ---
 
 ## 🛠️ Tecnologias
 
 - **Frontend (app cidadão):** React Native
-- **Frontend (portal web):** React + Tailwind CSS
+- **Frontend (portal web):** React.js
 - **Backend:** Node.js + Express
-- **Banco de dados:** PostgreSQL
-- **Autenticação:** JWT
-- **Mapas:** Leaflet / OpenStreetMap
-- **Infraestrutura local:** Docker
+- **Banco de dados:** PostgreSQL + PostGIS (geolocalização)
+- **Autenticação:** JWT + bcrypt
+- **Armazenamento de imagens:** AWS S3
+- **Notificações:** Firebase Cloud Messaging
+- **Infraestrutura:** Docker + Docker Compose
+
+---
+
+## 📋 Requisitos
+
+Levantamento com **17 requisitos funcionais** (RF01–RF17, módulos Cidadão e Administrativo) e **9 requisitos não funcionais** (RNF01–RNF09: desempenho, disponibilidade, segurança, usabilidade, escalabilidade, compatibilidade, manutenibilidade, privacidade/LGPD e portabilidade).
+
+Atores do sistema: Cidadão, Administrador, Equipe de Manutenção e Sistema Automático.
 
 ---
 
 ## 📌 Status do Projeto
 
-🚧 Em desenvolvimento — próxima etapa: integração do mapa de chamados no painel da gestão.
+🚧 Em desenvolvimento — documentação completa (requisitos, diagrama de classes UML com 7 entidades, DER e protótipos de 7 telas) já concluída como parte da Extensão III (UNIPAR Cascavel). Agora, na **Extensão IV**, o projeto avança para a produção de fato: implementação do MVP a partir da documentação e dos artefatos já validados.
+
+## 👥 Autoria
+
+Projeto desenvolvido por Camila Mendes e Gabriel Santos Inácio, no âmbito da Extensão III do curso de Engenharia de Software (ADS) — UNIPAR Cascavel, 2026.
 
 ---
 
